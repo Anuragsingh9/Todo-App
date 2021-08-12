@@ -15,4 +15,5 @@ use Modules\SuperAdmin\Http\Controllers\SuperAdminController;
 
 Route::prefix('superadmin')->group(function() {
     Route::get('/', [SuperAdminController::class,'firstMethod']);
+    Route::get('/createAcc', [SuperAdminController::class,'createAccount']);
 });
