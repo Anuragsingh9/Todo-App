@@ -18,7 +18,7 @@ class SuperAdminController extends Controller
     }
 
     public function createAccount() {
-        $fqdn = "first.". env('APP_HOST');
+        $fqdn = "firstty.". env('APP_HOST');
         $website = new Website;
         $website = app(WebsiteRepository::class)->create($website);
 
@@ -26,6 +26,7 @@ class SuperAdminController extends Controller
         $hostname->fqdn = $fqdn;
         $hostname = app(HostnameRepository::class)->create($hostname);
         app(HostnameRepository::class)->attach($hostname, $website);
+        return $hostname;
 //        dd($website->hostnames); // Collection with $hostname
     }
 }
